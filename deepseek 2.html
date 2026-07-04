@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Sus Question 🤨</title>
+    <style>
+        :root {
+            --sus-red: #c51111;
+            --sus-dark: #1a0000;
+            --sus-mid: #2d0000;
+            --gold: #d4a843;
+            --gold-light: #f0d78c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Comic Sans MS', 'Impact', sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+            width: 100vw;
+            background: #0a0000;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ==================== PAGE 1: THE QUESTION ==================== */
+        .page-1 {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #2d0000 0%, #0a0000 60%, #000000 100%);
+            z-index: 10;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            overflow: hidden;
+        }
+
+        .page-1.hidden {
+            opacity: 0;
+            transform: scale(1.1);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Sus background pattern */
+        .sus-bg-pattern {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0.12;
+            z-index: 0;
+        }
+
+        .sus-bg-pattern span {
+            position: absolute;
+            font-size: 3rem;
+            color: #ff4444;
+            animation: floatSus 8s infinite ease-in-out;
+        }
+
+        @keyframes floatSus {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(-3deg);
+            }
+            75% {
+                transform: translateY(-40px) rotate(2deg);
+            }
+        }
+
+        /* Suspicious eyes in background */
+        .sus-eyes {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 6rem;
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+            animation: sideEye 3s infinite ease-in-out;
+            letter-spacing: 20px;
+        }
+
+        @keyframes sideEye {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            30% {
+                transform: translateX(-48%) translateY(-8px);
+            }
+            60% {
+                transform: translateX(-52%) translateY(-4px);
+            }
+            85% {
+                transform: translateX(-47%) translateY(-10px);
+            }
+        }
+
+        /* Main content */
+        .question-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sus-label {
+            display: inline-block;
+            background: #ff0000;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: pulseSus 1.5s infinite ease-in-out;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+        }
+
+        @keyframes pulseSus {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(255, 0, 0, 0.9);
+                transform: scale(1.06);
+            }
+        }
+
+        .main-question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: #fff;
+            text-shadow:
+                0 0 20px rgba(255, 0, 0, 0.8),
+                0 0 60px rgba(255, 0, 0, 0.5),
+                0 0 100px rgba(255, 0, 0, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            animation: questionShake 4s infinite ease-in-out;
+        }
+
+        @keyframes questionShake {
+            0%,
+            100% {
+                transform: rotate(0);
+            }
+            2% {
+                transform: rotate(1.5deg);
+            }
+            4% {
+                transform: rotate(-1.5deg);
+            }
+            6% {
+                transform: rotate(0.8deg);
+            }
+            8% {
+                transform: rotate(0);
+            }
+        }
+
+        .sub-text {
+            color: #ff6666;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        /* New leave warning */
+        .leave-warning {
+            color: #ff3333;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.3);
+            animation: warningPulse 2s infinite ease-in-out;
+            line-height: 1.4;
+        }
+
+        @keyframes warningPulse {
+            0%,
+            100% {
+                opacity: 0.9;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.03);
+                text-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.6);
+            }
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 3;
+            min-height: 120px;
+        }
+
+        .btn {
+            width: 180px;
+            height: 180px;
+            border-radius: 28px;
+            border: none;
+            cursor: pointer;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease,
+                opacity 0.4s ease;
+            position: relative;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            will-change: transform;
+        }
+
+        .btn:active {
+            transform: scale(0.9) !important;
+            transition: transform 0.1s ease !important;
+        }
+
+        /* YES Button */
+        .btn-yes {
+            background: linear-gradient(145deg, #22c55e, #16a34a, #15803d);
+            color: #fff;
+            border: 5px solid #4ade80;
+            box-shadow:
+                0 12px 40px rgba(34, 197, 94, 0.5),
+                inset 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-yes:hover {
+            box-shadow:
+                0 18px 50px rgba(34, 197, 94, 0.7),
+                inset 0 4px 8px rgba(255, 255, 255, 0.3);
+            transform: translateY(-6px) scale(1.04);
+        }
+
+        .btn-yes::after {
+            content: '✅';
+            position: absolute;
+            bottom: 18px;
+            font-size: 1.5rem;
+        }
+
+        /* NO Button */
+        .btn-no {
+            background: linear-gradient(145deg, #ef4444, #dc2626, #b91c1c);
+            color: #fff;
+            border: 5px solid #f87171;
+            box-shadow:
+                0 12px 40px rgba(239, 68, 68, 0.5),
+                inset 0 4px 8px rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+        }
+
+        .btn-no:hover {
+            box-shadow:
+                0 18px 50px rgba(239, 68, 68, 0.7),
+                inset 0 4px 8px rgba(255, 255, 255, 0.25);
+            transform: translateY(-6px) scale(1.04);
+        }
+
+        .btn-no::after {
+            content: '❌';
+            position: absolute;
+            bottom: 18px;
+            font-size: 1.5rem;
+        }
+
+        /* Disabled state for NO button */
+        .btn-no.disabled {
+            pointer-events: none !important;
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+            filter: grayscale(40%);
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Gotcha flash on YES button */
+        .gotcha-flash {
+            animation: gotchaPulse 0.5s ease-out;
+        }
+
+        @keyframes gotchaPulse {
+            0% {
+                box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+                transform: scale(1);
+            }
+            30% {
+                box-shadow: 0 0 120px rgba(34, 197, 94, 1), 0 0 200px rgba(74, 222, 128, 0.8);
+                transform: scale(1.15);
+            }
+            100% {
+                box-shadow: 0 12px 40px rgba(34, 197, 94, 0.5);
+                transform: scale(1);
+            }
+        }
+
+        /* Tooltip */
+        .gotcha-tooltip {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            background: #000;
+            color: #4ade80;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+            white-space: nowrap;
+        }
+
+        .gotcha-tooltip.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ==================== PAGE 2: CELEBRATION ==================== */
+        .page-2 {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #1a0a2e 0%, #0d0015 40%, #000000 100%);
+            z-index: 5;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: scale(0.9);
+            overflow: hidden;
+        }
+
+        .page-2.visible {
+            opacity: 1;
+            pointer-events: all;
+            z-index: 20;
+            transform: scale(1);
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 21;
+            pointer-events: none;
+        }
+
+        /* Certificate */
+        .certificate-wrapper {
+            position: relative;
+            z-index: 22;
+            perspective: 1000px;
+        }
+
+        .certificate {
+            background: linear-gradient(180deg, #fffef5 0%, #fdf8e8 30%, #fef9ef 60%, #fffdf5 100%);
+            border: 8px solid #d4a843;
+            border-radius: 20px;
+            padding: 40px 50px;
+            max-width: 600px;
+            width: 90vw;
+            text-align: center;
+            box-shadow:
+                0 0 0 4px #8b6914,
+                0 0 0 12px #d4a843,
+                0 0 0 16px #8b6914,
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 120px rgba(212, 168, 67, 0.3);
+            position: relative;
+            animation: certificateAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes certificateAppear {
+            0% {
+                transform: rotateX(30deg) translateY(60px) scale(0.7);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0) translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .certificate::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border: 2px dashed #d4a843;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .certificate-seal {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            animation: sealBounce 1s ease-out 0.5s both;
+        }
+
+        @keyframes sealBounce {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.3) rotate(15deg);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(0.9) rotate(-5deg);
+            }
+            100% {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+            }
+        }
+
+        .certificate-title {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 900;
+            color: #8b6914;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .certificate-body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: #333;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .certificate-highlight {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff006e, #ff4da6, #ff006e);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            animation: rainbowShine 2s linear infinite;
+            letter-spacing: 2px;
+        }
+
+        @keyframes rainbowShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .certificate-emoji-row {
+            font-size: 2.5rem;
+            margin: 15px 0;
+            animation: emojiParty 0.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes emojiParty {
+            0% {
+                transform: scale(1) rotate(-3deg);
+            }
+            100% {
+                transform: scale(1.1) rotate(3deg);
+            }
+        }
+
+        .certificate-id {
+            font-family: 'Courier New', monospace;
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .certificate-signature {
+            margin-top: 25px;
+            font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
+            font-size: 1.8rem;
+            color: #555;
+            border-top: 2px solid #d4a843;
+            display: inline-block;
+            padding-top: 8px;
+        }
+
+        /* Sparkles around certificate */
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 23;
+            font-size: 2rem;
+            animation: sparkleFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkleFloat {
+            0%,
+            100% {
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+            30% {
+                transform: translateY(-30px) scale(1.4);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-50px) scale(0.8);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-70px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Return button */
+        .return-btn {
+            position: relative;
+            z-index: 25;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .return-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .btn {
+                width: 130px;
+                height: 130px;
+                font-size: 1.6rem;
+                border-radius: 20px;
+                border-width: 4px;
+            }
+            .btn::after {
+                bottom: 10px;
+                font-size: 1.2rem;
+            }
+            .button-container {
+                gap: 18px;
+                min-height: 100px;
+            }
+            .certificate {
+                padding: 25px 20px;
+                border-width: 5px;
+                border-radius: 14px;
+            }
+            .certificate::before {
+                inset: 8px;
+                border-radius: 6px;
+            }
+            .main-question {
+                font-size: 1.8rem;
+            }
+            .sus-eyes {
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+            .leave-warning {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .btn {
+                width: 100px;
+                height: 100px;
+                font-size: 1.3rem;
+                border-radius: 16px;
+                border-width: 3px;
+            }
+            .btn::after {
+                bottom: 6px;
+                font-size: 1rem;
+            }
+            .button-container {
+                gap: 12px;
+                min-height: 80px;
+            }
+            .leave-warning {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PAGE 1: THE QUESTION ==================== -->
+    <div class="page-1" id="page1">
+        <!-- Sus background pattern -->
+        <div class="sus-bg-pattern" id="susPattern"></div>
+
+        <!-- Suspicious eyes -->
+        <div class="sus-eyes">👀 👀</div>
+
+        <!-- Main content -->
+        <div class="question-container">
+            <div class="sus-label">⚠️ VERY SUS QUESTION ⚠️</div>
+            <h1 class="main-question">ARE YOU GAY??</h1>
+            <p class="sub-text">think carefully... 🤨</p>
+            <!-- NEW WARNING MESSAGE -->
+            <p class="leave-warning">🚨 IF YOU LEAVE WITHOUT ANSWERING, THEN YOU ARE GAY 🚨</p>
+
+            <div class="button-container" id="buttonContainer">
+                <button class="btn btn-yes" id="btnYes" aria-label="Yes">
+                    YES
+                </button>
+                <button class="btn btn-no" id="btnNo" aria-label="No">
+                    NO
+                </button>
+            </div>
+        </div>
+
+        <!-- Gotcha tooltip -->
+        <div class="gotcha-tooltip" id="gotchaTooltip">😏 GOTCHA! You clicked YES! 😏</div>
+    </div>
+
+    <!-- ==================== PAGE 2: CELEBRATION ==================== -->
+    <div class="page-2" id="page2">
+        <canvas id="confetti-canvas"></canvas>
+
+        <!-- Sparkles -->
+        <div id="sparklesContainer"></div>
+
+        <div class="certificate-wrapper">
+            <div class="certificate">
+                <div class="certificate-seal">🏳️‍🌈</div>
+                <div class="certificate-title">✦ Official Certificate ✦</div>
+                <div class="certificate-body">
+                    This document proudly certifies that
+                </div>
+                <div class="certificate-highlight">
+                    YOU ARE NOW OFFICIALLY<br>INTERNATIONALLY CERTIFICATED<br>
+                </div>
+                <div style="font-size: 3rem; font-weight: 900; color: #ff006e; letter-spacing: 4px;">
+                    GAY
+                </div>
+                <div class="certificate-emoji-row">🎇🎉 🏳️‍🌈 🎉🎇</div>
+                <div class="certificate-id">
+                    Certificate ID: GAY-2024-🏳️‍🌈-069-420<br>
+                    Issued: <span id="certDate"></span><br>
+                    Status: <span style="color:#22c55e;">● ACTIVE & FABULOUS</span>
+                </div>
+                <div class="certificate-signature">
+                    ✧ The Council of Sus ✧
+                </div>
+            </div>
+        </div>
+
+        <button class="return-btn" id="returnBtn" title="Go back and question your life choices">
+            🔄 TAKE THE TEST AGAIN
+        </button>
+    </div>
+
+    <script>
+        (function() {
+            // ==================== DOM ELEMENTS ====================
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            const btnYes = document.getElementById('btnYes');
+            const btnNo = document.getElementById('btnNo');
+            const buttonContainer = document.getElementById('buttonContainer');
+            const gotchaTooltip = document.getElementById('gotchaTooltip');
+            const confettiCanvas = document.getElementById('confetti-canvas');
+            const ctx = confettiCanvas.getContext('2d');
+            const sparklesContainer = document.getElementById('sparklesContainer');
+            const returnBtn = document.getElementById('returnBtn');
+            const certDateSpan = document.getElementById('certDate');
+            const susPattern = document.getElementById('susPattern');
+
+            let isSwapping = false;
+            let hasSwapped = false;
+            let confettiParticles = [];
+            let confettiActive = false;
+            let animationId = null;
+
+            // ==================== SUS BACKGROUND PATTERN ====================
+            function createSusPattern() {
+                const susChars = ['ඞ', '👀', '🤨', '😏', '🕵️', '🧐', '👁️', '🔍'];
+                const fragment = document.createDocumentFragment();
+                const count = 35;
+
+                for (let i = 0; i < count; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = susChars[Math.floor(Math.random() * susChars.length)];
+                    span.style.left = Math.random() * 90 + '%';
+                    span.style.top = Math.random() * 90 + '%';
+                    span.style.fontSize = (1.5 + Math.random() * 4) + 'rem';
+                    span.style.animationDelay = Math.random() * 8 + 's';
+                    span.style.animationDuration = (6 + Math.random() * 10) + 's';
+                    span.style.opacity = (0.3 + Math.random() * 0.7);
+                    fragment.appendChild(span);
+                }
+                susPattern.appendChild(fragment);
+            }
+
+            // ==================== CERTIFICATE DATE ====================
+            function setCertDate() {
+                const now = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                certDateSpan.textContent = now.toLocaleDateString('en-US', options);
+            }
+
+            // ==================== CONFETTI SYSTEM ====================
+            function resizeCanvas() {
+                confettiCanvas.width = window.innerWidth;
+                confettiCanvas.height = window.innerHeight;
+            }
+
+            function createConfettiParticle() {
+                const colors = [
+                    '#ff006e', '#ff4da6', '#ff6b6b', '#ffd93d', '#6bcb77',
+                    '#4d96ff', '#ff922b', '#845ef7', '#20c997', '#f06595',
+                    '#ff0000', '#ff8800', '#ffe600', '#00ff88', '#00aaff',
+                    '#ff00ff', '#00ffff', '#ff6347', '#7b2ff7', '#f7c844'
+                ];
+                return {
+                    x: Math.random() * confettiCanvas.width,
+                    y: -20 - Math.random() * 100,
+                    width: 5 + Math.random() * 12,
+                    height: 4 + Math.random() * 10,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: 2 + Math.random() * 5,
+                    speedX: -1.5 + Math.random() * 3,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: -3 + Math.random() * 6,
+                    opacity: 0.7 + Math.random() * 0.3,
+                    wobble: Math.random() * Math.PI * 2,
+                    wobbleSpeed: 0.02 + Math.random() * 0.05,
+                };
+            }
+
+            function initConfetti() {
+                confettiParticles = [];
+                const particleCount = 200;
+                for (let i = 0; i < particleCount; i++) {
+                    const p = createConfettiParticle();
+                    p.y = Math.random() * confettiCanvas.height; // Stagger initial positions
+                    confettiParticles.push(p);
+                }
+            }
+
+            function updateConfetti() {
+                if (!confettiActive) return;
+
+                ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+                for (let i = 0; i < confettiParticles.length; i++) {
+                    const p = confettiParticles[i];
+
+                    p.y += p.speedY;
+                    p.wobble += p.wobbleSpeed;
+                    p.x += p.speedX + Math.sin(p.wobble) * 1.5;
+                    p.rotation += p.rotationSpeed;
+
+                    // Wrap around
+                    if (p.y > confettiCanvas.height + 50) {
+                        p.y = -30;
+                        p.x = Math.random() * confettiCanvas.width;
+                    }
+                    if (p.x > confettiCanvas.width + 50) p.x = -30;
+                    if (p.x < -50) p.x = confettiCanvas.width + 30;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = p.opacity;
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.width / 2, -p.height / 2, p.width, p.height);
+                    ctx.restore();
+                }
+
+                animationId = requestAnimationFrame(updateConfetti);
+            }
+
+            function startConfetti() {
+                confettiActive = true;
+                resizeCanvas();
+                initConfetti();
+                if (!animationId) {
+                    updateConfetti();
+                }
+            }
+
+            function stopConfetti() {
+                confettiActive = false;
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+                ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                confettiParticles = [];
+            }
+
+            // ==================== SPARKLES ====================
+            function createSparkles() {
+                sparklesContainer.innerHTML = '';
+                const sparkleEmojis = ['✨', '⭐', '💫', '🌟', '⚡', '💖', '🔥', '🎀'];
+                const count = 25;
+
+                for (let i = 0; i < count; i++) {
+                    const sparkle = document.createElement('span');
+                    sparkle.className = 'sparkle';
+                    sparkle.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = Math.random() * 90 + '%';
+                    sparkle.style.top = Math.random() * 80 + '%';
+                    sparkle.style.fontSize = (1.2 + Math.random() * 2.5) + 'rem';
+                    sparkle.style.animationDelay = Math.random() * 2 + 's';
+                    sparkle.style.animationDuration = (1.5 + Math.random() * 3) + 's';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.zIndex = '23';
+                    sparklesContainer.appendChild(sparkle);
+                }
+            }
+
+            function clearSparkles() {
+                sparklesContainer.innerHTML = '';
+            }
+
+            // ==================== BUTTON SWAP LOGIC ====================
+            function getButtonPositions() {
+                const yesRect = btnYes.getBoundingClientRect();
+                const noRect = btnNo.getBoundingClientRect();
+                return {
+                    yesLeft: yesRect.left,
+                    yesTop: yesRect.top,
+                    yesWidth: yesRect.width,
+                    yesHeight: yesRect.height,
+                    noLeft: noRect.left,
+                    noTop: noRect.top,
+                    noWidth: noRect.width,
+                    noHeight: noRect.height,
+                    deltaX: yesRect.left - noRect.left,
+                    deltaY: yesRect.top - noRect.top,
+                };
+            }
+
+            function swapButtons() {
+                if (isSwapping || hasSwapped) return;
+                isSwapping = true;
+                hasSwapped = true;
+
+                const positions = getButtonPositions();
+                const deltaX = positions.deltaX;
+                const deltaY = positions.deltaY;
+
+                // Disable NO button immediately
+                btnNo.classList.add('disabled');
+
+                // Set transition on both buttons
+                btnYes.style.transition =
+                    'transform 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease';
+                btnNo.style.transition =
+                    'transform 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, filter 0.3s ease';
+
+                // Apply transforms to swap positions
+                btnYes.style.transform = `translateX(${-deltaX}px) translateY(${-deltaY}px)`;
+                btnNo.style.transform = `translateX(${deltaX}px) translateY(${deltaY}px)`;
+
+                const noCenterX = positions.noLeft + positions.noWidth / 2;
+                const noCenterY = positions.noTop + positions.noHeight / 2;
+                gotchaTooltip.style.left = noCenterX + 'px';
+                gotchaTooltip.style.top = (noCenterY - 80) + 'px';
+                gotchaTooltip.style.transform = 'translate(-50%, -100%) scale(0.5)';
+                gotchaTooltip.style.opacity = '0';
+
+                const onTransitionEnd = function(e) {
+                    if (e.target === btnYes || e.target === btnNo) {
+                        btnYes.removeEventListener('transitionend', onTransitionEnd);
+                        btnNo.removeEventListener('transitionend', onTransitionEnd);
+
+                        btnYes.classList.add('gotcha-flash');
+                        gotchaTooltip.classList.add('visible');
+
+                        setTimeout(() => {
+                            gotchaTooltip.classList.remove('visible');
+                            proceedToCelebration();
+                        }, 1300);
+                    }
+                };
+
+                btnYes.addEventListener('transitionend', onTransitionEnd);
+                btnNo.addEventListener('transitionend', onTransitionEnd);
+
+                setTimeout(() => {
+                    if (isSwapping && page1.classList.contains('hidden') === false &&
+                        page2.classList.contains('visible') === false) {
+                        btnYes.removeEventListener('transitionend', onTransitionEnd);
+                        btnNo.removeEventListener('transitionend', onTransitionEnd);
+                        btnYes.classList.add('gotcha-flash');
+                        gotchaTooltip.classList.add('visible');
+                        setTimeout(() => {
+                            gotchaTooltip.classList.remove('visible');
+                            proceedToCelebration();
+                        }, 1300);
+                    }
+                }, 900);
+            }
+
+            function proceedToCelebration() {
+                isSwapping = false;
+                page1.classList.add('hidden');
+                page2.classList.add('visible');
+                setCertDate();
+                createSparkles();
+                startConfetti();
+                resetButtons();
+            }
+
+            function resetButtons() {
+                btnYes.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, opacity 0.4s ease';
+                btnNo.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, opacity 0.4s ease';
+                btnYes.style.transform = 'translateX(0) translateY(0)';
+                btnNo.style.transform = 'translateX(0) translateY(0)';
+                btnNo.classList.remove('disabled');
+                btnYes.classList.remove('gotcha-flash');
+                isSwapping = false;
+                hasSwapped = false;
+                gotchaTooltip.classList.remove('visible');
+            }
+
+            function goBackToQuestion() {
+                page2.classList.remove('visible');
+                page1.classList.remove('hidden');
+                stopConfetti();
+                clearSparkles();
+                resetButtons();
+                setTimeout(() => {
+                    hasSwapped = false;
+                    isSwapping = false;
+                }, 400);
+            }
+
+            // ==================== EVENT LISTENERS ====================
+            btnYes.addEventListener('click', function(e) {
+                if (isSwapping) return;
+                btnYes.classList.add('gotcha-flash');
+                setTimeout(() => {
+                    btnYes.classList.remove('gotcha-flash');
+                    proceedToCelebration();
+                }, 400);
+            });
+
+            btnNo.addEventListener('click', function(e) {
+                if (isSwapping || hasSwapped) return;
+                e.preventDefault();
+                swapButtons();
+            });
+
+            btnNo.addEventListener('mousedown', function(e) {
+                if (isSwapping || hasSwapped) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
+
+            btnNo.addEventListener('touchstart', function(e) {
+                if (isSwapping || hasSwapped) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, { passive: false });
+
+            returnBtn.addEventListener('click', goBackToQuestion);
+
+            window.addEventListener('resize', () => {
+                if (confettiActive) {
+                    resizeCanvas();
+                }
+            });
+
+            window.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && page2.classList.contains('visible')) {
+                    goBackToQuestion();
+                }
+            });
+
+            // ==================== INITIALIZATION ====================
+            function init() {
+                createSusPattern();
+                resizeCanvas();
+                setCertDate();
+            }
+
+            init();
+
+            console.log('🤨 Very sus website loaded...');
+            console.log('👀 Are you going to click NO? I dare you...');
+            console.log('😏 Try it. I double dare you.');
+        })();
+    </script>
+</body>
+</html>
